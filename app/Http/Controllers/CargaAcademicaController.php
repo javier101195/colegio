@@ -18,13 +18,13 @@ class CargaAcademicaController extends Controller
      */
 
 
-    public function User(){
+    /* public function User(){
         return $this->hasMany(User::class,'id');
     }
 
     public function materia(){
         return $this->hasMany(materia::class,'id');
-    }
+    } */
 
 
 

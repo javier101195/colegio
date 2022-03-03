@@ -39,18 +39,34 @@ class CargaAcademica extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function materia()
+    /* public function materia()
     {
         return $this->hasOne('App\Models\Materia', 'id', 'materia_id');
-    }
+    } */
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function user()
+    /* public function user()
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
+    } */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function materia()
+    {
+        return $this->hasMany('App\Models\Materia', 'id', 'materia_id');
     }
+
+    public function user()
+    {
+        return $this->hasMany('App\Models\User', 'id', 'user_id');
+    }
+
+    
     
 
 }

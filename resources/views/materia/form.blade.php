@@ -1,5 +1,9 @@
 <div class="box box-info padding-1">
     <div class="box-body">
+        {{-- @php
+        dd($maestros);
+            
+        @endphp --}}
         
         <div class="form-group">
             {{ Form::label('nombre') }}
@@ -27,7 +31,14 @@
         </div>
         <div class="form-group">
             {{ Form::label('maestro_id') }}
-            {{ Form::select('maestro_id',$maestros, $materia->maestro_id, ['class' => 'form-control' . ($errors->has('maestro_id') ? ' is-invalid' : ''), 'placeholder' => 'Maestro Id']) }}
+            <select name="maestro_id">
+                @foreach ($maestros as $maestro)
+                    <option value="{{ $maestro->id }}">
+                        {{ $maestro->nombre }}
+                    </option>
+                @endforeach
+            </select>
+           
             {!! $errors->first('maestro_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
