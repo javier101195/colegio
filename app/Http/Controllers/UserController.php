@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Materia;
+use App\Models\Maestro;
 use Illuminate\Http\Request;
+
+$maestros=Maestro::pluck('nombre','id');
 
 /**
  * Class UserController

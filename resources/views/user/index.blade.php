@@ -37,7 +37,17 @@
                                         <th>No</th>
                                         
 										<th>Name</th>
-										<th>Email</th>
+										{{-- <th>Email</th> --}}
+
+                                        <th># de materias</th>
+
+                                        <th># de creditos</th>
+
+                                        <th>semestre</th>
+                                        
+                                        <th>maestro</th>
+
+                                        <th>acciones</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +58,14 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $user->name }}</td>
-											<td>{{ $user->email }}</td>
+											{{-- <td>{{ $user->email }}</td> --}}
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
+                                           
 
                                             <td>
                                                 <form action="{{ route('users.destroy',$user->id) }}" method="POST">

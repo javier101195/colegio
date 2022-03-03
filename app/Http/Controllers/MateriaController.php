@@ -18,9 +18,9 @@ class MateriaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function carga_academica(){
+    /* public function carga_academica(){
         return $this->hasMany(carga_academica::class,'id');
-    }
+    } */
 
 
     /* public function maestros(){
@@ -43,7 +43,12 @@ class MateriaController extends Controller
     public function create()
     {
         $materia = new Materia();
-        $maestros=Maestro::pluck('nombre','id');
+        /* $maestros=Maestro::pluck('nombre','id');
+        dd($maestros); */
+        /* $materia = Materia::with('maestro')->get(); */
+        //dd($materia[0]->maestro->nombre);
+        $maestros = Maestro::all();
+        /* dd($maestros); */
         return view('materia.create', compact('materia','maestros'));
     }
 
@@ -54,8 +59,13 @@ class MateriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
+
     {
+
+        
         request()->validate(Materia::$rules);
+        
 
         $materia = Materia::create($request->all());
 

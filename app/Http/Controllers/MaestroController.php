@@ -18,10 +18,10 @@ class MaestroController extends Controller
      */
 
 
-    public function materia(){
+    /* public function materia(){
         return $this->hasMany(materia::class,'id');
     
-    }
+    } */
 
 
 

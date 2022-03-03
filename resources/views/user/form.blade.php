@@ -6,10 +6,16 @@
             {{ Form::text('name', $user->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             {{ Form::label('email') }}
             {{ Form::text('email', $user->email, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
             {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
+        </div> --}}
+
+        <div class="form-group">
+            {{ Form::label('maestro_id') }}
+            {{ Form::text('maestro_id',$maestros, $materia->maestro_id, ['class' => 'form-control' . ($errors->has('maestro_id') ? ' is-invalid' : ''), 'placeholder' => 'Maestro Id']) }}
+            {!! $errors->first('maestro_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
